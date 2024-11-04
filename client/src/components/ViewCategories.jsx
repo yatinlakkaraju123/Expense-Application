@@ -34,6 +34,7 @@ function ViewCategories() {
     const handleKeyPress = async (event) => {
         if (event.key === 'Enter') {
             try {
+                console.log(userId);
                 const response = await axios.post('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories', { name: newCategory, userID: userId });
                 setCategories([...categories, response.data]);
                 setNewCategory('');
