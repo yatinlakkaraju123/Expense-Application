@@ -2,8 +2,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const categoryRoutes = require('./routes/categoryRoutes');
-const expenseRoutes = require('./routes/expenseRoutes');
+const categoryRoutes = require('../routes/categoryRoutes');
+const expenseRoutes = require('../routes/expenseRoutes');
 const cors = require('cors');
 // Register routes
 
