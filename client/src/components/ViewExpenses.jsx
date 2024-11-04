@@ -17,12 +17,12 @@ function ViewExpenses() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const response = await axios.get('http://localhost:5000/api/categories');
+      const response = await axios.get('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories');
       const userCategories = response.data.filter(category => category.userID === userId);
       setCategories(userCategories);
   };
     const fetchExpenses = async () => {
-      const response = await axios.get('http://localhost:5000/api/expenses');
+      const response = await axios.get('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/expenses');
       const userExpenses = response.data.filter(expense => expense.userID === userId);
       setExpenses(userExpenses);
       setFilteredExpenses(userExpenses); // Set filtered expenses to all initially

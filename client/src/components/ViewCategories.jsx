@@ -14,7 +14,7 @@ function ViewCategories() {
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const response = await axios.get('http://localhost:5000/api/categories');
+            const response = await axios.get('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories');
             const userCategories = response.data.filter(category => category.userID === userId);
             setCategories(userCategories);
         };
@@ -34,7 +34,7 @@ function ViewCategories() {
     const handleKeyPress = async (event) => {
         if (event.key === 'Enter') {
             try {
-                const response = await axios.post('http://localhost:5000/api/categories', { name: newCategory, userID: userId });
+                const response = await axios.post('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories', { name: newCategory, userID: userId });
                 setCategories([...categories, response.data]);
                 setNewCategory('');
                 setIsAdding(false);
@@ -46,7 +46,7 @@ function ViewCategories() {
 
     const handleDelete = async (categoryId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/categories/${categoryId}`);
+            await axios.delete(`https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories/${categoryId}`);
             setCategories(categories.filter(category => category._id !== categoryId));
         } catch (error) {
             console.error('Error deleting category:', error);
@@ -64,7 +64,7 @@ function ViewCategories() {
 
     const handleEditSubmit = async (categoryId) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/categories/${categoryId}`, { name: editCategoryName });
+            const response = await axios.put(`https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories/${categoryId}`, { name: editCategoryName });
             setCategories(categories.map(category => 
                 category._id === categoryId ? { ...category, name: response.data.name } : category
             ));

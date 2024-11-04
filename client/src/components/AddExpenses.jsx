@@ -11,7 +11,7 @@ function AddExpenses() {
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const response = await axios.get('http://localhost:5000/api/categories');
+            const response = await axios.get('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/categories');
             const userCategories = response.data.filter(category => category.userID === userId);
             setCategories(userCategories);
         };
@@ -38,7 +38,7 @@ function AddExpenses() {
             };
 
             // Send the new expense to your backend
-            const response = await axios.post('http://localhost:5000/api/expenses', newExpense);
+            const response = await axios.post('https://expense-application-c99f020l6-yatin-lakkarajus-projects.vercel.app/api/expenses', newExpense);
             alert("Expense added successfully!");
             
             // Reset form fields after submission
