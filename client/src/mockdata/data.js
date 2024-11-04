@@ -1,0 +1,27 @@
+export const data = [
+    {
+        id:1,
+        title:"Home",
+        link:"/"
+    },
+    {
+        id:2,
+        title:"Home1",
+        link:"#"
+    },
+    {
+        id:3,
+        title:"Home2",
+        link:"#"
+    },
+    {
+        id:4,
+        title:"Home3",
+        link:"#"
+    },
+    {
+        id:5,
+        title:"Home4",
+        link:"/"
+    },
+]
